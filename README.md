@@ -6,9 +6,11 @@ https://github.com/phpseclib/phpseclib (BigInteger class)
 
 https://github.com/paragonie/constant_time_encoding (Hex and Binary class)
 
+Problem
+
 in 32 bit version PHP might have some issues with numbers larger than 32bit, so variable $hash just cant be correctly calculated in implementations src/Implementations/, because it calculates 64bit integer (const SIZE = 64, and 8x8 matrix of image in implimentation PerceptualHash.php for example)
 
-Description of problem
+Descussion of problem
 
 https://github.com/jenssegers/imagehash/issues/16
 
