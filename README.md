@@ -3,12 +3,17 @@ Solve problem of original ImageHash, that output wrong hash summ under 32bit Ope
 Used addition libreries :
 
 https://github.com/phpseclib/phpseclib (BigInteger class)
+
 https://github.com/paragonie/constant_time_encoding (Hex and Binary class)
 
 in 32 bit version PHP might have some issues with numbers larger than 32bit, so variable $hash just cant be correctly calculated in implementations src/Implementations/, because it calculates 64bit integer (const SIZE = 64, and 8x8 matrix of image in implimentation PerceptualHash.php for example)
 
 Description of problem
+
 https://github.com/jenssegers/imagehash/issues/16
+
+Returns 64bit unsigned int in string format, so you can easy store it in MySQL in format BIGINT(20) UNSIGNED
+If you wont bigger hash, just replace SIZE = 64 \ SIZE = 8 and 8x8 values in implementations
 
 ImageHash
 =========
