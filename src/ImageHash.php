@@ -14,7 +14,7 @@ class ImageHash
      * Return hashes as decimals.
      */
     const DECIMAL = 'dec';
-
+    
     /**
      * The hashing implementation.
      *
@@ -172,6 +172,10 @@ class ImageHash
      */
     protected function formatHash($hash)
     {
+        if (strpos(get_class($this->implementation), 'Big') !== false){
+            return $this->mode === static::HEXADECIMAL ? $hash->toHex() : $hash->toString();
+        }
+        
         return $this->mode === static::HEXADECIMAL ? dechex($hash) : $hash;
     }
 }
