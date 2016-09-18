@@ -20,6 +20,8 @@ If you wont bigger hash, just replace SIZE = 64 \ SIZE = 8 and 8x8 values in imp
 
 Added new implementations with "Big" prefix that use BigIntager library, see test.php in tests dirrectory for examples
 
+Also notice that I not fix the "distance" method because its more effective for me calculate difference throw SQL querys like BIT_COUNT(" . $hash . " ^ image_dhash), you can fix that method if you need.
+
 ImageHash
 =========
 
