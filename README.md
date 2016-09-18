@@ -1,4 +1,4 @@
-Solve problem of original ImageHash, that output wrong hash summ under 32bit Operating System (too short hash example 3c3e0e1a instead of 3c3e0e1a3a1e1e1e)
+Solved problem of original ImageHash, that output wrong hash summ under 32bit Operating System (too short hash example 3c3e0e1a instead of 3c3e0e1a3a1e1e1e)
 
 Used addition libreries :
 
@@ -15,6 +15,7 @@ https://github.com/jenssegers/imagehash/issues/16
 Returns 64bit unsigned int in string format, so you can easy store it in MySQL in format BIGINT(20) UNSIGNED
 
 If you wont bigger hash, just replace SIZE = 64 \ SIZE = 8 and 8x8 values in implementations
+
 Added new implementations with "Big" prefix that use BigIntager library, see test.php in tests dirrectory for examples
 
 ImageHash
