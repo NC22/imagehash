@@ -1,3 +1,15 @@
+Solve problem of original ImageHash, that output wrong hash summ under 32bit Operating System (too short hash example 3c3e0e1a instead of 3c3e0e1a3a1e1e1e)
+
+Used addition libreries :
+
+https://github.com/phpseclib/phpseclib (BigInteger class)
+https://github.com/paragonie/constant_time_encoding (Hex and Binary class)
+
+in 32 bit version PHP might have some issues with numbers larger than 32bit, so variable $hash just cant be correctly calculated in implementations src/Implementations/, because it calculates 64bit integer (const SIZE = 64, and 8x8 matrix of image in implimentation PerceptualHash.php for example)
+
+Description of problem
+https://github.com/jenssegers/imagehash/issues/16
+
 ImageHash
 =========
 
