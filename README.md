@@ -16,7 +16,7 @@ https://github.com/jenssegers/imagehash/issues/16
 
 Now hash function returns BigInteger object that can be converted to 64bit unsigned int in string format, so you can easy store it in MySQL in format BIGINT(20) UNSIGNED
 
-If you wont bigger hash, just replace SIZE = 64 \ SIZE = 8 and 8x8 values in implementations
+If you want bigger hash, just replace SIZE = 64 \ SIZE = 8 and 8x8 values in implementations
 
 Added new implementations with "Big" prefix that use BigIntager library, see test.php in tests dirrectory for examples
 
